@@ -82,7 +82,7 @@ params['rotary_embedding'] = config.rotary_dim
 model_dir = os.path.join(args.model_store, f'{model_name}-{args.num_gpu}gpu')
 weights_path = os.path.join(model_dir, 'fastertransformer', f'{version}', f'{args.num_gpu}-gpu')
 model_chkpt_path = os.path.join('/','model', 'fastertransformer', f'{version}', f'{args.num_gpu}-gpu')
-params['checkpoint_path'] = model_checkpt_path
+params['checkpoint_path'] = model_chkpt_path
 triton_config = template.substitute(params)
 assert '${' not in triton_config
 
